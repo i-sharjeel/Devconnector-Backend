@@ -6,7 +6,7 @@ const app = express();
 let domainName = "";
 
 if (process.env.STATUS === "production") {
-    domainName = "https://devconnector-backend.vercel.app"
+    domainName = "https://dev-connector-backend.vercel.app"
 }
 
 //Connect Database
