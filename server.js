@@ -1,7 +1,7 @@
 const express = require("express");
 const connectDB = require("./config/db");
 require('dotenv').config();
-const path = require("path");
+// const path = require("path");
 const app = express();
 let domainName = "";
 
@@ -26,18 +26,16 @@ app.use(`${domainName}:${process.env.PORT}/api/posts`, require("./routes/api/pos
 
 // Serve static assets in production
 // console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
-if (process.env.STATUS == "production") {
-    // set static folder
-    // app.use(express.static('client/build'));
+// if (process.env.STATUS == "production") {
+    
+//     app.get("*", (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'api', 'index.js'));
+//     })
+// }
 
-    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'api', 'index.js'));
-    })
-}
-
-else {
-    console.log("I am running and env is Development")
-}
+// else {
+//     console.log("I am running and env is Development")
+// }
 
 const PORT = process.env.PORT || 5000;
 
