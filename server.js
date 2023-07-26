@@ -8,7 +8,7 @@ let domainName = "";
 if (process.env.STATUS === "production") {
     domainName = "https://dev-connector-backend.vercel.app"
 }
-// const PORT = 4973;
+const PORT = 4973;
 
 //Connect Database
 connectDB();
