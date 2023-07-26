@@ -10,7 +10,7 @@
     "start": "node server",
     "server": "nodemon server",
     "build": "npm run build",
-    "vercel-build": "npm install"
+    "vercel-build": "echo hehe"
   },
   "author": "Muhammad Sharjeel",
   "license": "ISC",
