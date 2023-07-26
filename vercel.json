@@ -3,13 +3,18 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/server.js"
+            "destination": "/api"
         }
     ],
     "builds": [
         {
-            "src": "/server.js",
+            "src": "/api",
             "use": "@vercel/node"
         }
-    ]
+    ],
+    "functions": {
+        "api/*.js": {
+            "maxDuration": 10
+        }
+    }
 }
