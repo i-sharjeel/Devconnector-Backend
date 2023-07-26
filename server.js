@@ -5,9 +5,8 @@ const auth = require("./routes/api/auth");
 const profile = require("./routes/api/profile");
 const post = require("./routes/api/posts");
 require('dotenv').config();
-// const path = require("path");
 const app = express();
-let domainName = "";
+// let domainName = "";
 
 // if (process.env.STATUS === "production") {
 //     domainName = "https://dev-connector-backend.vercel.app"
