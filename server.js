@@ -28,10 +28,10 @@ app.use(`${domainName}:${process.env.PORT}/api/posts`, require("./routes/api/pos
 // console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
 if (process.env.STATUS == "production") {
     // set static folder
-    app.use(express.static('client/build'));
+    // app.use(express.static('client/build'));
 
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'api', 'index.js'));
     })
 }
 
