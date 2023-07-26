@@ -8,7 +8,7 @@ let domainName = "";
 if (process.env.STATUS === "production") {
     domainName = "https://dev-connector-backend.vercel.app"
 }
-const PORT = 4973;
+// const PORT = 4973;
 
 //Connect Database
 connectDB();
@@ -20,10 +20,10 @@ app.use(express.json({ extended: false }));
 
 // Defining Routes
 
-app.use(`${domainName}:${PORT}/api/users`, require("./routes/api/users"));
-app.use(`${domainName}:${PORT}/api/auth`, require("./routes/api/auth"));
-app.use(`${domainName}:${PORT}/api/profile`, require("./routes/api/profile"));
-app.use(`${domainName}:${PORT}/api/posts`, require("./routes/api/posts"));
+app.use(`${domainName}/api/users`, require("./routes/api/users"));
+app.use(`${domainName}/api/auth`, require("./routes/api/auth"));
+app.use(`${domainName}/api/profile`, require("./routes/api/profile"));
+app.use(`${domainName}/api/posts`, require("./routes/api/posts"));
 
 // Serve static assets in production
 // console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
