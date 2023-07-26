@@ -6,12 +6,6 @@
             "destination": "/api"
         }
     ],
-    "builds": [
-        {
-            "src": "/api",
-            "use": "@vercel/node"
-        }
-    ],
     "functions": {
         "api/*.js": {
             "maxDuration": 10
