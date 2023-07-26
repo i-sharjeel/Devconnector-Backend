@@ -8,10 +8,10 @@
   },
   "scripts": {
     "start": "node server",
-    "server": "nodemon ./index",
+    "server": "nodemon server",
     "build": "SET NODE_ENV=production && NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "client": "npm start --prefix client",
-    "vercel-build": "echo hello"
+    "vercel-build": "SET NODE_ENV=production && npm install"
   },
   "author": "Muhammad Sharjeel",
   "license": "ISC",

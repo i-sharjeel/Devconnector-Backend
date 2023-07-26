@@ -1,5 +1,9 @@
 const express = require("express");
 const connectDB = require("./config/db");
+const users = require("./routes/api/users");
+const auth = require("./routes/api/auth");
+const profile = require("./routes/api/profile");
+const post = require("./routes/api/posts");
 require('dotenv').config();
 // const path = require("path");
 const app = express();
@@ -19,15 +23,15 @@ app.use(express.json({ extended: false }));
 // app.get("/", (req, res) => res.send("API Running"));
 
 // Defining Routes
-app.use(`/api/users`, require("./routes/api/users"));
-app.use(`/api/auth`, require("./routes/api/auth"));
-app.use(`/api/profile`, require("./routes/api/profile"));
-app.use(`/api/posts`, require("./routes/api/posts"));
+app.use(`/api/users`, users);
+app.use(`/api/auth`, auth);
+app.use(`/api/profile`, profile);
+app.use(`/api/posts`, post);
 
 // Serve static assets in production
 // console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
 // if (process.env.STATUS == "production") {
-    
+
 //     app.get("*", (req, res) => {
 //         res.sendFile(path.resolve(__dirname, 'api', 'index.js'));
 //     })
