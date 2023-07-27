@@ -4,6 +4,7 @@ const users = require("./routes/api/users");
 const auth = require("./routes/api/auth");
 const profile = require("./routes/api/profile");
 const post = require("./routes/api/posts");
+const cors = require("cors")
 require('dotenv').config();
 const app = express();
 // let domainName = "";
@@ -21,6 +22,7 @@ app.use(express.json());
 // app.get("/", (req, res) => res.send("API Running"));
 
 // Defining Routes
+app.use(cors());
 app.use(`/api/users`, users);
 app.use(`/api/auth`, auth);
 app.use(`/api/profile`, profile);
