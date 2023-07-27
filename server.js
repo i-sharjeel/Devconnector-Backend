@@ -26,6 +26,9 @@ app.use(`/api/users`, users);
 app.use(`/api/auth`, auth);
 app.use(`/api/profile`, profile);
 app.use(`/api/posts`, post);
+app.use(`/`, (req, res) => {
+    res.send('Welcome to the server')
+});
 
 // Serve static assets in production
 // console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
