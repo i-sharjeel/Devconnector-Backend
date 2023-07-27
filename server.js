@@ -11,13 +11,12 @@ const app = express();
 // if (process.env.STATUS === "production") {
 //     domainName = "https://dev-connector-backend.vercel.app"
 // }
-const PORT = 4973;
 
 //Connect Database
 connectDB();
 
 // init Middleware
-app.use(express.json({ extended: false }));
+app.use(express.json());
 
 // app.get("/", (req, res) => res.send("API Running"));
 
@@ -30,6 +29,11 @@ app.use(`/`, (req, res) => {
     res.send('Welcome to the server')
 });
 
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server started on PORT ${PORT}`)
+});
 // Serve static assets in production
 // console.log('NODE_ENV: ' + config.util.getEnv('NODE_ENV'));
 // if (process.env.STATUS == "production") {
@@ -43,10 +47,5 @@ app.use(`/`, (req, res) => {
 //     console.log("I am running and env is Development")
 // }
 
-// const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
-
-module.exports = app;
 
 // "vercel-build": "npm install && npm install --prefix client && npm run server && npm run build --prefix client"
